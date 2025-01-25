@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    public enum ItemType { Item, Utencil, Ingredients,}
+    public enum ItemType { Item, Utencil, Ingredients, }
     public ItemType itemType;
 
     public string itemName, itemDescription;
@@ -12,7 +12,7 @@ public class ItemManager : MonoBehaviour
     public Sprite itemsImage;
 
     public int amountOfAffect;
-    public enum AffectType { HP, Mana}
+    public enum AffectType { HP, Mana }
     public AffectType affectType;
 
     public int utencilDexterity;
@@ -29,7 +29,7 @@ public class ItemManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void HarvestPlant()
@@ -39,7 +39,7 @@ public class ItemManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             //print("This item is: " + itemName);
             Inventory.instance.AddItems(this);
