@@ -7764,6 +7764,41 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 96269078155680748, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 138.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 96269078155680748, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 51.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 96269078155680748, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.265823
+      objectReference: {fileID: 0}
+    - target: {fileID: 96269078155680748, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426956217432900474, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_fontSize
+      value: 22.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426956217432900474, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1185e09c088273548be89e38c051760f, type: 2}
+    - target: {fileID: 5426956217432900474, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 22.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426956217432900474, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8269072218190405, guid: 1185e09c088273548be89e38c051760f, type: 2}
+>>>>>>> parent of df16315 (Fixed some UI Menu)
     - target: {fileID: 6132682275378935561, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -7788,6 +7823,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 6132682275644224247, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.265823
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275644224247, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 93.8
+      objectReference: {fileID: 0}
+>>>>>>> parent of df16315 (Fixed some UI Menu)
     - target: {fileID: 6132682275680212575, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -7796,6 +7842,73 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 6132682275847621193, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275847621193, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 44.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275847621193, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.265823
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275847621193, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -83.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275847621194, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bbb8fab83053bb84794c9aa386958cac, type: 3}
+    - target: {fileID: 6132682275847621194, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2979263
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275847621194, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2979263
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275847621194, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275862190262, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_fontSize
+      value: 22.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275862190262, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1185e09c088273548be89e38c051760f, type: 2}
+    - target: {fileID: 6132682275862190262, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275862190262, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275862190262, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275862190262, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 22.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682275862190262, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8269072218190405, guid: 1185e09c088273548be89e38c051760f, type: 2}
+    - target: {fileID: 6132682275862190262, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+>>>>>>> parent of df16315 (Fixed some UI Menu)
     - target: {fileID: 6132682275916096775, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -7840,6 +7953,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 6132682276255500267, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682276255500267, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 240.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682276255500267, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 132.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682276255500267, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> parent of df16315 (Fixed some UI Menu)
     - target: {fileID: 6132682276255500268, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -7860,6 +7992,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasMENU
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 6132682276415178575, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> parent of df16315 (Fixed some UI Menu)
     - target: {fileID: 6132682276415178608, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7968,10 +8107,32 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 6132682276504682691, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.265823
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682276504682691, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 108.4
+      objectReference: {fileID: 0}
+>>>>>>> parent of df16315 (Fixed some UI Menu)
     - target: {fileID: 6132682276505830364, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 6132682276787968498, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132682276787968498, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> parent of df16315 (Fixed some UI Menu)
     - target: {fileID: 6132682276881824737, guid: db4ede7d9c8df4a458e26136b64d378f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -10432,10 +10593,28 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 7195514146636856168, guid: 6df9a769ff382e247a8f092d61a8bf48, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1548158123, guid: 14465e45b2144dc41863c111623c6fb6, type: 3}
+>>>>>>> parent of df16315 (Fixed some UI Menu)
     - target: {fileID: 7195514146636856173, guid: 6df9a769ff382e247a8f092d61a8bf48, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 7195514146636856174, guid: 6df9a769ff382e247a8f092d61a8bf48, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 51.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195514146636856174, guid: 6df9a769ff382e247a8f092d61a8bf48, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 51.9
+      objectReference: {fileID: 0}
+>>>>>>> parent of df16315 (Fixed some UI Menu)
     - target: {fileID: 7195514146636856175, guid: 6df9a769ff382e247a8f092d61a8bf48, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
