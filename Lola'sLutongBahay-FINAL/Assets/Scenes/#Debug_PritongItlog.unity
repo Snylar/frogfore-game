@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 242531511}
   - component: {fileID: 242531515}
   m_Layer: 0
-  m_Name: Salt New
+  m_Name: Salt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,7 +789,7 @@ MonoBehaviour:
   EmptyBowl: {fileID: 21300000, guid: a239abc6d1957e548983d432de63f8d9, type: 3}
   recipeManager: {fileID: 872490234}
   servingManager: {fileID: 0}
-  actionName: Add Salt
+  actionName: add salt
   AddingIngredients: {fileID: 1090968676}
   AddIngredient: Add Salt
   actionEvent:
@@ -860,7 +860,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 245350012}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &242531509
 Rigidbody2D:
@@ -1083,12 +1083,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 872490233}
   - {fileID: 1459281727}
   - {fileID: 1755185443}
   - {fileID: 1336555935}
   - {fileID: 505007921}
   - {fileID: 242531508}
-  - {fileID: 872490233}
   - {fileID: 480732506}
   - {fileID: 106506116}
   - {fileID: 1443257401}
@@ -1644,7 +1644,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 57.3}
-  m_SizeDelta: {x: 200.3, y: 90.7}
+  m_SizeDelta: {x: 190.9, y: 76.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500531502
 MonoBehaviour:
@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 48916187244e5284cab6cade09744b08, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c26ecd06d0f24174aad25632db266d9a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1768,7 +1768,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 245350012}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &505007922
 MonoBehaviour:
@@ -1787,7 +1787,7 @@ MonoBehaviour:
   EmptyBowl: {fileID: 0}
   recipeManager: {fileID: 872490234}
   servingManager: {fileID: 0}
-  actionName: Add Egg
+  actionName: add egg
   AddingIngredients: {fileID: 1614532838}
   AddIngredient: Cracks
   actionEvent:
@@ -1888,7 +1888,7 @@ MonoBehaviour:
   EmptyBowl: {fileID: 0}
   recipeManager: {fileID: 872490234}
   servingManager: {fileID: 0}
-  actionName: Add Oil
+  actionName: add oil
   AddingIngredients: {fileID: 1477192854}
   AddIngredient: Add Oil
   actionEvent:
@@ -2042,7 +2042,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 341.9, y: 171.8}
-  m_SizeDelta: {x: 60.8, y: 59.1}
+  m_SizeDelta: {x: 78.7, y: 74.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &519036636
 MonoBehaviour:
@@ -2063,7 +2063,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2073,8 +2073,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -798461097, guid: 640926cc5f84e2d4eac7e5b5e8625daa, type: 3}
+    m_PressedSprite: {fileID: 1125398573, guid: 640926cc5f84e2d4eac7e5b5e8625daa, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -2132,7 +2132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1102136122, guid: 14465e45b2144dc41863c111623c6fb6, type: 3}
+  m_Sprite: {fileID: -169761849, guid: 640926cc5f84e2d4eac7e5b5e8625daa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2249,7 +2249,7 @@ GameObject:
   - component: {fileID: 553045519}
   - component: {fileID: 553045518}
   m_Layer: 0
-  m_Name: Knob_0
+  m_Name: Knob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2355,21 +2355,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireTrigger: {fileID: 553045516}
-  actionEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 713452878}
-        m_TargetAssemblyTypeName: UnityEngine.VFX.VisualEffect, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  actionEvent: {fileID: 713452878}
+  recipeManager: {fileID: 872490234}
+  servingManager: {fileID: 0}
+  actionName: heat up pan
 --- !u!50 &553045518
 Rigidbody2D:
   serializedVersion: 4
@@ -3587,7 +3576,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245350012}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &872490234
 MonoBehaviour:
@@ -3602,14 +3591,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipe:
-  - Heat up Pan
-  - Add Oil
-  - Add Egg
-  - Add Salt
+  - heat up pan
+  - add oil
+  - add egg
+  - add salt
   playerActions: []
   correctEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   failedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4959,11 +4960,11 @@ Transform:
   m_GameObject: {fileID: 1336555933}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.672179, y: -2.8251092, z: -0.6885676}
-  m_LocalScale: {x: 0.26, y: 0.26, z: 0.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 245350012}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1336555936
 PolygonCollider2D:
@@ -4982,7 +4983,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 40, y: 40}
+    oldSize: {x: 10.526315, y: 10.526315}
     newSize: {x: 40, y: 40}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5728,7 +5729,7 @@ Transform:
   m_Children:
   - {fileID: 553045514}
   m_Father: {fileID: 245350012}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1477192851
 GameObject:
@@ -6576,7 +6577,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 245350012}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1755185444
 BoxCollider2D:
