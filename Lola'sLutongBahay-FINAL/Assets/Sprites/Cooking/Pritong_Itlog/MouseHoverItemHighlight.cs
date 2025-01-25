@@ -8,7 +8,7 @@ public class MouseHoverItemHighlight : MonoBehaviour
     private Material material;  // Material of the object
     private float targetGlow = 0f;  // Target value for GlowSwitch (0 or 1)
     private float currentGlow = 0f;  // Current value of GlowSwitch
-    public float glowSpeed = 2f;  // Speed of the transition (how fast it goes from 0 to 1)
+    private float glowSpeed = 0.5f;  // Speed of the transition (how fast it goes from 0 to 1)
 
     void Start()
     {
