@@ -2,68 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 
 public class knobtrigger : MonoBehaviour
 {
     private Animator KnobTwistAnim;
     public Animator FireTrigger;
     private bool stoveTurnedOn = false;
-    [SerializeField] UnityEvent actionEvent;
+    [SerializeField] VisualEffect actionEvent;
 
-    // Audio setup
-    public AudioClip knobOnSound;
-    public AudioClip knobOffSound;
-    private AudioSource audioSource;
-
+    [Header("Managers")]
+    public RecipeManager recipeManager;
+    public ServingManager servingManager;
+    public string actionName;
     // Start is called before the first frame update
     void Start()
     {
         KnobTwistAnim = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
-
-        // Add AudioSource if missing
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
     void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0))
         {
             if (stoveTurnedOn == false)
             {
-                // Play animations
                 KnobTwistAnim.Play("knobOn");
                 FireTrigger.Play("FireOn");
+                actionEvent.Play();
 
-                // Play sound
-                PlaySound(knobOnSound);
+                recipeManager.playerActions.Add(actionName);
+                string result = recipeManager.CheckSequence();
+                Debug.Log(result);
 
-                // Trigger events
-                actionEvent.Invoke();
                 stoveTurnedOn = true;
             }
             else
             {
-                // Play animations
                 KnobTwistAnim.Play("knobOff");
                 FireTrigger.Play("FireOff");
-
-                // Play sound
-                PlaySound(knobOffSound);
-
                 stoveTurnedOn = false;
             }
-        }
-    }
-
-    private void PlaySound(AudioClip clip)
-    {
-        if (clip != null && audioSource != null)
-        {
-            audioSource.PlayOneShot(clip);
         }
     }
 }
