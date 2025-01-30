@@ -8,11 +8,12 @@ using UnityEngine;
 public class JsonDataService : IDataService
 {
     private const string KEY = "ggdPhkeOoiv6YMiPWa34kIuOdDUL7NwQFg6l1DVdwN8=";
+    public static string nameSaveGame = "dev";
     private const string IV = "JZuM0HQsWSBVpRHTeRZMYQ==";
 
     public bool SaveData<T>(string RelativePath, T Data, bool Encrypted)
     {
-        string path = Application.persistentDataPath + RelativePath;
+        string path = Application.persistentDataPath + "save_game" + nameSaveGame + RelativePath;
 
         try
         {
@@ -66,7 +67,7 @@ public class JsonDataService : IDataService
 
     public T LoadData<T>(string RelativePath, bool Encrypted)
     {
-        string path = Application.persistentDataPath + RelativePath;
+        string path = Application.persistentDataPath + "save_game" + nameSaveGame + RelativePath;
 
         if (!File.Exists(path))
         {
