@@ -313,6 +313,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireTrigger: {fileID: 658863497}
+  recipeManager: {fileID: 0}
+  servingManager: {fileID: 0}
+  actionName: 
+  actionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  knobOnSound: {fileID: 0}
+  knobOffSound: {fileID: 0}
 --- !u!95 &68573138
 Animator:
   serializedVersion: 5
@@ -535,7 +543,7 @@ GameObject:
   - component: {fileID: 938575363}
   - component: {fileID: 938575364}
   m_Layer: 0
-  m_Name: sandokricetakipdum2
+  m_Name: potlid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,7 +590,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: c6ebcf189e06e164ba1bba8109506f58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ba283219937ce8488b894be1a67d8af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -602,8 +610,8 @@ Transform:
   m_GameObject: {fileID: 938575360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.05, y: -3.36, z: 0}
-  m_LocalScale: {x: 0.74138373, y: 0.74138373, z: 0.74138373}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7844, y: 0.7844, z: 0.7844}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -712,7 +720,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e403ec1798b0fc34bbaddf4f81ec7f18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00717c18a467b80468be91998b9e6c87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -731,8 +739,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191705457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.72, y: -2.96, z: 0}
-  m_LocalScale: {x: 0.52, y: 0.52, z: 0.52}
+  m_LocalPosition: {x: -5.58, y: -2.07, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -875,7 +883,7 @@ GameObject:
   - component: {fileID: 1685496883}
   - component: {fileID: 1685496884}
   m_Layer: 0
-  m_Name: sandokricedum2
+  m_Name: ricepadle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -922,7 +930,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 581cd2237ddf651479f9146d6caa012c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c979625a1e45a43469d49ec3aae7df4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -965,7 +973,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 3.99, y: 1.21}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1148,7 +1156,7 @@ GameObject:
   - component: {fileID: 2048292453}
   - component: {fileID: 2048292455}
   m_Layer: 0
-  m_Name: palayok dum
+  m_Name: pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1195,12 +1203,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 916c239fc1e8e764084548a4b6013c23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 342e5044014296d42940695fbc5bce68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 5.56, y: 4.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1238,8 +1246,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 5.56, y: 4.77}
+    newSize: {x: 5.56, y: 4.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

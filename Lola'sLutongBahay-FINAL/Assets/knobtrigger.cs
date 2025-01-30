@@ -8,7 +8,14 @@ public class knobtrigger : MonoBehaviour
     private Animator KnobTwistAnim;
     public Animator FireTrigger;
     private bool stoveTurnedOn = false;
+
+    [Header("Managers")]
+    public RecipeManager recipeManager;
+    public ServingManager servingManager;
+    public string actionName;
+
     [SerializeField] UnityEvent actionEvent;
+    
 
     // Audio setup
     public AudioClip knobOnSound;
@@ -40,6 +47,11 @@ public class knobtrigger : MonoBehaviour
 
                 // Play sound
                 PlaySound(knobOnSound);
+                
+                //Recipe Manager
+                recipeManager.playerActions.Add(actionName);
+                    string result = recipeManager.CheckSequence();
+                    Debug.Log(result);
 
                 // Trigger events
                 actionEvent.Invoke();
