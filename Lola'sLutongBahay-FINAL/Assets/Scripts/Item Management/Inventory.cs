@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,13 +17,18 @@ public class Inventory : MonoBehaviour
     private long savetime;
     private long loadtimme;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
+        InstanceInventory(false);
         itemsList = new List<ItemManager>();
     }
-
+    void InstanceInventory(bool createNew)
+    {
+        if (createNew == true) { instance = new Inventory(); return; }
+        if (instance == null) { instance = this; return; }
+    }
     public void Save_SerializeJson()
     {
         long start_time = DateTime.Now.Ticks;
@@ -44,10 +50,12 @@ public class Inventory : MonoBehaviour
             List<ItemManager> data = dataService.LoadData<List<ItemManager>>(filePath, encryptedEnabled);
             loadtimme = DateTime.Now.Ticks - start_time;
             Debug.Log($"Inventory loaded ({loadtimme / 1000f})");
+            itemsList = data;
         }
         catch (Exception e)
         {
             Debug.LogError($"Inventory Could not read file!");
+
         }
     }
     public void AddItems(ItemManager item)
