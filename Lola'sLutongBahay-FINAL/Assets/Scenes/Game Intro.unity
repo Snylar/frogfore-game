@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 134601839846585439, guid: a1e6c1a0bc68ac4458959b2b4605d5db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 134601839956219419, guid: a1e6c1a0bc68ac4458959b2b4605d5db, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -222,17 +226,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 134601841074331893, guid: a1e6c1a0bc68ac4458959b2b4605d5db, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 799.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 134601841074331893, guid: a1e6c1a0bc68ac4458959b2b4605d5db, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 448.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 134601841074331894, guid: a1e6c1a0bc68ac4458959b2b4605d5db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f0450d5f5d753147874fd39e97d48e0, type: 3}
     - target: {fileID: 134601841340351068, guid: a1e6c1a0bc68ac4458959b2b4605d5db, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 134601841626997703, guid: a1e6c1a0bc68ac4458959b2b4605d5db, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 757.8
+      value: 807.3
       objectReference: {fileID: 0}
     - target: {fileID: 134601841626997703, guid: a1e6c1a0bc68ac4458959b2b4605d5db, type: 3}
       propertyPath: m_SizeDelta.y
       value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 134601841626997703, guid: a1e6c1a0bc68ac4458959b2b4605d5db, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -223
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1e6c1a0bc68ac4458959b2b4605d5db, type: 3}
@@ -510,7 +530,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766790936}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 3a1b827e7ced37446a13c0e3902d3a27, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: bbb7930b338b0924e898a94879ae88ad, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1537240364}
@@ -1050,8 +1070,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 321.72, y: -123.2}
-  m_SizeDelta: {x: 57.8, y: 47}
+  m_AnchoredPosition: {x: 321.72, y: -150.4}
+  m_SizeDelta: {x: 56.1, y: 57.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760653856
 MonoBehaviour:
@@ -1072,7 +1092,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1082,8 +1102,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -1158526985, guid: 640926cc5f84e2d4eac7e5b5e8625daa, type: 3}
+    m_PressedSprite: {fileID: -384515629, guid: 640926cc5f84e2d4eac7e5b5e8625daa, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -1116,7 +1136,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1141,7 +1161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 49120fbea2495af4fa4b160f6a8bd696, type: 3}
+  m_Sprite: {fileID: 1804575345, guid: 640926cc5f84e2d4eac7e5b5e8625daa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
