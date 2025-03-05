@@ -29,6 +29,7 @@ public class RecipeManager : MonoBehaviour
         else if (ListsAreEqual(playerActions.GetRange(0, recipe.Count), recipe))
         {
             failedEvent.Invoke();
+            Debug.Log("Hello");
             return "You've performed some of the correct actions, but there are more to do in the recipe.";
         }
         else

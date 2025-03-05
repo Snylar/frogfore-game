@@ -64,7 +64,6 @@ public class DragBowlIngredients : MonoBehaviour
             {
                 AddingIngredients.SetTrigger(AddIngredient);
                 Debug.Log("Inside");
-                transform.eulerAngles = Vector3.forward * 0;
                 this.GetComponent<SpriteRenderer>().sprite = EmptyBowl;
                 StartCoroutine(PlayCookingStateAfterAnimation());
             }
@@ -105,7 +104,6 @@ public class DragBowlIngredients : MonoBehaviour
         {
             Debug.Log("In");
             targetCollider = other;
-            transform.eulerAngles = Vector3.forward * rotateangle;
         }
     }
 
@@ -115,7 +113,6 @@ public class DragBowlIngredients : MonoBehaviour
         {
             Debug.Log("Out");
             targetCollider = null;
-            transform.eulerAngles = Vector3.forward * 0;
         }
     }
-}
+} 

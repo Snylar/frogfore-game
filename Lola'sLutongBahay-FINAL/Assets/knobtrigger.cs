@@ -42,7 +42,7 @@ public class knobtrigger : MonoBehaviour
             if (stoveTurnedOn == false)
             {
                 // Play animations
-                KnobTwistAnim.Play("knobOn");
+                //KnobTwistAnim.Play("knobOn");
                 FireTrigger.Play("FireOn");
 
                 // Play sound
@@ -60,7 +60,7 @@ public class knobtrigger : MonoBehaviour
             else
             {
                 // Play animations
-                KnobTwistAnim.Play("knobOff");
+                //KnobTwistAnim.Play("knobOff");
                 FireTrigger.Play("FireOff");
 
                 // Play sound
