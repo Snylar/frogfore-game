@@ -196,7 +196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &47757703
 Transform:
   m_ObjectHideFlags: 0
@@ -357,12 +357,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireTrigger: {fileID: 658863497}
-  recipeManager: {fileID: 0}
+  recipeManager: {fileID: 42383983}
   servingManager: {fileID: 0}
   actionName: 
   actionEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   knobOnSound: {fileID: 0}
   knobOffSound: {fileID: 0}
 --- !u!95 &68573138
@@ -385,6 +397,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &73294396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73294397}
+  m_Layer: 0
+  m_Name: Adding Animation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73294397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73294396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.908989, y: 0.28723073, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &348890041
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,8 +455,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348890041}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.2591887, y: -1.14, z: 0.029925402}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.2591887, y: -0.86, z: 0.029925402}
+  m_LocalScale: {x: 0.79, y: 0.79, z: 0.79}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1553896843}
@@ -499,7 +542,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 00717c18a467b80468be91998b9e6c87, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 342e5044014296d42940695fbc5bce68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -711,6 +754,7 @@ GameObject:
   - component: {fileID: 938575361}
   - component: {fileID: 938575363}
   - component: {fileID: 938575364}
+  - component: {fileID: 938575365}
   m_Layer: 0
   m_Name: potlid
   m_TagString: Untagged
@@ -813,6 +857,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136dee2945f726f42aaebde1669059ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &938575365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938575360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5458439015a2c574a8979889dc0c739d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateangle: 0
+  targetCollider: {fileID: 2048292455}
+  EmptyBowl: {fileID: 0}
+  recipeManager: {fileID: 42383983}
+  servingManager: {fileID: 0}
+  actionName: 
+  AddingIngredients: {fileID: 0}
+  AddIngredient: 
+  actionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1191705457
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +1028,7 @@ GameObject:
   - component: {fileID: 1250071731}
   - component: {fileID: 1250071730}
   - component: {fileID: 1250071729}
+  - component: {fileID: 1250071732}
   m_Layer: 0
   m_Name: WaterBottle
   m_TagString: Untagged
@@ -1039,6 +1119,29 @@ Transform:
   m_Father: {fileID: 47757703}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250071732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250071728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5458439015a2c574a8979889dc0c739d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateangle: 0
+  targetCollider: {fileID: 2048292455}
+  EmptyBowl: {fileID: 0}
+  recipeManager: {fileID: 42383983}
+  servingManager: {fileID: 0}
+  actionName: 
+  AddingIngredients: {fileID: 0}
+  AddIngredient: 
+  actionEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1553896842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,7 +1158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1553896843
 Transform:
   m_ObjectHideFlags: 0
@@ -1107,6 +1210,7 @@ GameObject:
   - component: {fileID: 1626753220}
   - component: {fileID: 1626753219}
   - component: {fileID: 1626753218}
+  - component: {fileID: 1626753221}
   m_Layer: 0
   m_Name: Sink Asset
   m_TagString: Untagged
@@ -1200,13 +1304,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626753217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4, y: 0.31820315, z: 0.029925402}
+  m_LocalPosition: {x: -2.31, y: 0.38, z: 1.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1553896843}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1626753221
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626753217}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54193f0beea1c06489c049b68e637a57, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1685496880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,6 +1343,7 @@ GameObject:
   - component: {fileID: 1685496881}
   - component: {fileID: 1685496884}
   - component: {fileID: 1685496885}
+  - component: {fileID: 1685496886}
   m_Layer: 0
   m_Name: ricepadle
   m_TagString: Untagged
@@ -1301,7 +1426,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685496880}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1362,6 +1487,29 @@ PolygonCollider2D:
       - {x: -0.705, y: -0.60499996}
       - {x: -0.465, y: -0.515}
       - {x: -0.155, y: -0.275}
+--- !u!114 &1685496886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685496880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5458439015a2c574a8979889dc0c739d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateangle: 0
+  targetCollider: {fileID: 2048292455}
+  EmptyBowl: {fileID: 0}
+  recipeManager: {fileID: 42383983}
+  servingManager: {fileID: 0}
+  actionName: 
+  AddingIngredients: {fileID: 0}
+  AddIngredient: 
+  actionEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1871307039
 GameObject:
   m_ObjectHideFlags: 0
