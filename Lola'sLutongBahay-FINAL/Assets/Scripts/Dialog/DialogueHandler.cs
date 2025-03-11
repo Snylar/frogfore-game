@@ -26,9 +26,21 @@ public class Dialogue
  
 public class DialogueHandler : MonoBehaviour
 {
-    public Button startDialogue;
     public GameObject DialoguePanel;
     public Dialogue dialogue;
+    public bool StarttheDialogue;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if(StarttheDialogue == true)
+            {
+                TriggerDialogue();
+                DialoguePanel.SetActive(false);
+            }
+        }
+    }
  
     public void TriggerDialogue()
     {
@@ -41,7 +53,8 @@ public class DialogueHandler : MonoBehaviour
         if(collision.tag == "Player")
         {
             DialoguePanel.SetActive(true);
-            startDialogue.onClick.AddListener(TriggerDialogue);
+            StarttheDialogue = true;
+            //startDialogue.onClick.AddListener(TriggerDialogue);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -49,6 +62,7 @@ public class DialogueHandler : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             DialoguePanel.SetActive(false);
+            StarttheDialogue = false;
         }
     }
 }
