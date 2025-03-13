@@ -7,7 +7,7 @@ public enum NPCType
 {
     Normal,
     QuestGiver,
-    QuestTarget // NPC you need to talk to for a quest
+    QuestTarget
 }
 
 [System.Serializable]
@@ -38,18 +38,22 @@ public class DialogueHandler : MonoBehaviour
 
     [Header("Dialogue Settings")]
     public GameObject DialoguePanel;
-    public Dialogue dialogue;
-    public bool StarttheDialogue;
+    public bool autoTriggerOnCollision = false;
+    public Dialogue initialDialogue;
+    public Dialogue afterQuestDialogue;
+    private bool playerInRange = false;
 
     [Header("Quest Integration")]
-    [SerializeField] private string taskName; // Task this NPC gives or completes
-    [SerializeField] private string targetNPCName; // For QuestGivers: the NPC you must talk to
+    [SerializeField] private string taskName;
+    [SerializeField] private string targetNPCName;
     [SerializeField] private UnityEvent onQuestComplete;
 
     [Header("Events")]
-    public UnityEvent onDialogueComplete; // Called when dialogue ends
+    public UnityEvent onDialogueComplete;
 
     private TaskManager taskManager;
+    private bool hasGivenQuest = false;
+    private bool hasPlayedInitialDialogue = false; // NEW: Tracks if initial dialogue was shown
 
     void Start()
     {
@@ -62,10 +66,10 @@ public class DialogueHandler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && StarttheDialogue)
+        if (Input.GetKeyDown(KeyCode.F) && playerInRange)
         {
             TriggerDialogue();
-            DialoguePanel.SetActive(false);
+            DialoguePanel.SetActive(false); 
         }
     }
 
@@ -80,16 +84,17 @@ public class DialogueHandler : MonoBehaviour
             Debug.LogWarning("GameManager instance not found!");
         }
 
+        Dialogue currentDialogue = GetCurrentDialogue();
         if (DialogueController.Instance != null)
         {
-            DialogueController.Instance.StartDialogue(dialogue);
+            DialogueController.Instance.StartDialogue(currentDialogue);
         }
         else
         {
             Debug.LogWarning("DialogueController instance not found!");
         }
 
-        if (npcType == NPCType.QuestGiver)
+        if (npcType == NPCType.QuestGiver && !hasGivenQuest)
         {
             AssignTalkToNPCQuest();
         }
@@ -98,15 +103,30 @@ public class DialogueHandler : MonoBehaviour
             CompleteTalkToNPCQuest();
         }
 
-        // EndDialogue after dialogue finishes (adjust timing as needed)
         Invoke(nameof(EndDialogue), 2f);
+    }
+
+    private Dialogue GetCurrentDialogue()
+    {
+        if (!hasPlayedInitialDialogue)
+        {
+            hasPlayedInitialDialogue = true; // Ensure it only plays once
+            return initialDialogue;
+        }
+        else if (taskManager != null && taskManager.IsTaskComplete(taskName))
+        {
+            return afterQuestDialogue;
+        }
+        return afterQuestDialogue; // Fallback if initial is done but quest isn't complete
     }
 
     private void AssignTalkToNPCQuest()
     {
-        if (taskManager == null || string.IsNullOrEmpty(taskName) || string.IsNullOrEmpty(targetNPCName)) return;
+        if (taskManager == null || string.IsNullOrEmpty(taskName) || hasGivenQuest) return;
 
         taskManager.AddTask(taskName);
+        QuestHUD.instance?.UpdateQuestHUD();
+        hasGivenQuest = true;
         Debug.Log($"Quest assigned: Talk to {targetNPCName}");
     }
 
@@ -118,19 +138,16 @@ public class DialogueHandler : MonoBehaviour
         if (task != null && !task.taskComplete)
         {
             task.MarkAsComplete();
+            QuestHUD.instance?.UpdateQuestHUD();
             onQuestComplete?.Invoke();
-            Debug.Log($"Quest '{taskName}' completed by talking to {gameObject.name}.");
-        }
-        else if (task == null)
-        {
-            Debug.LogWarning($"Task '{taskName}' not found in TaskManager.");
+            Debug.Log($"Quest '{taskName}' completed.");
         }
     }
 
     public void EndDialogue()
     {
         Debug.Log("Dialogue finished!");
-        onDialogueComplete?.Invoke(); // Triggers UnityEvents tied to end of dialogue
+        onDialogueComplete?.Invoke();
 
         if (GameManager.instance != null)
         {
@@ -142,10 +159,13 @@ public class DialogueHandler : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            DialoguePanel.SetActive(true);
-            StarttheDialogue = true;
+            playerInRange = true;
+            DialoguePanel?.SetActive(true);
 
-            Debug.Log(npcType == NPCType.QuestGiver ? "Quest Giver NPC detected." : "Quest Target NPC detected.");
+            if (autoTriggerOnCollision)
+            {
+                TriggerDialogue();
+            }
         }
     }
 
@@ -153,8 +173,8 @@ public class DialogueHandler : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            DialoguePanel.SetActive(false);
-            StarttheDialogue = false;
+            playerInRange = false;
+            DialoguePanel?.SetActive(false);
         }
     }
 }
