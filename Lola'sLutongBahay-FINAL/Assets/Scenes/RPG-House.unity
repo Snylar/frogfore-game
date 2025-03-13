@@ -524,7 +524,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1428563301}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
@@ -1486,6 +1486,64 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &134778856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134778858}
+  - component: {fileID: 134778857}
+  m_Layer: 0
+  m_Name: KitchenEntryCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &134778857
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134778856}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.22, y: 2.58}
+  m_EdgeRadius: 0
+--- !u!4 &134778858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134778856}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.832, y: 5.52, z: 0.12007574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &137554224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,8 +1978,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146b93f91fc65674eb2a0c618c01c93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tasks: []
-  allTaskFinished:
+  tasks:
+  - title: Talk to Ming
+    subtitle: 
+    taskComplete: 0
+  allTasksFinished:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &159754147
@@ -1937,7 +1998,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164717509
 GameObject:
@@ -6496,17 +6557,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7793443186993562279, guid: 4cecb4c15d5716a4baba56e29d5bc0a4, type: 3}
   m_PrefabInstance: {fileID: 708645482}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &719350586 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
-  m_PrefabInstance: {fileID: 1431203098}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146b93f91fc65674eb2a0c618c01c93d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &727641565
 GameObject:
   m_ObjectHideFlags: 0
@@ -8320,6 +8370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 954163686}
   - component: {fileID: 954163687}
+  - component: {fileID: 954163688}
   m_Layer: 0
   m_Name: EnableGameObject
   m_TagString: Untagged
@@ -8340,7 +8391,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &954163687
 MonoBehaviour:
@@ -8356,6 +8407,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Talk to Lola
   objectToEnable: {fileID: 2009415243}
+--- !u!114 &954163688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954163684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29615ccb40311d46ab2bc2f1fd9fbea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskName: Talk to Ming
+  objectToDisable: {fileID: 134778856}
 --- !u!1 &970384492
 GameObject:
   m_ObjectHideFlags: 0
@@ -12318,11 +12383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7195514146636856174, guid: 6df9a769ff382e247a8f092d61a8bf48, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 384.9
+      value: -383.7
       objectReference: {fileID: 0}
     - target: {fileID: 7195514146636856174, guid: 6df9a769ff382e247a8f092d61a8bf48, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 194.8
+      value: 199.7
       objectReference: {fileID: 0}
     - target: {fileID: 7195514146636856175, guid: 6df9a769ff382e247a8f092d61a8bf48, type: 3}
       propertyPath: m_Transition
@@ -13233,17 +13298,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408102106}
   m_CullTransparentMesh: 1
---- !u!114 &1428563301 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1466265332, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
-  m_PrefabInstance: {fileID: 1431203098}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3ee98e95e8c547408aedb958b1b9cdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1431203098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13306,6 +13360,10 @@ PrefabInstance:
     - target: {fileID: 9012234488905838542, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838543, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: gameMenuOpened
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9012234488905838543, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: playerStats.Array.data[0]
@@ -20357,7 +20415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4e0b7773b47d14cb0a823554322855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcType: 1
+  npcType: 2
   DialoguePanel: {fileID: 1978689628}
   dialogue:
     dialogueLines:
@@ -20394,11 +20452,35 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: 2abb1338522ecf643bb77f60f0a95238, type: 3}
       line: '*Yaawwnn* meeooow *purrrr*'
   StarttheDialogue: 0
-  taskName: Talk to Lola
-  targetNPCName: Lola_NPC
+  taskName: Talk to Ming
+  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 159754146}
+        m_TargetAssemblyTypeName: TaskManager, Assembly-CSharp
+        m_MethodName: AddTask
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Talk to Lola
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 954163688}
+        m_TargetAssemblyTypeName: DisableGameObjectOnQuest, Assembly-CSharp
+        m_MethodName: CheckQuestStatus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -59227,7 +59309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d09e2377c02e6f42b3d5574b2cdcc88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManager: {fileID: 719350586}
+  taskManager: {fileID: 0}
   itemSlotContainer: {fileID: 3794589606044644287, guid: d9f9028830692eb46b34e08e0cbe7c41, type: 3}
   itemSlotContainerParent: {fileID: 6132682277403499411}
 --- !u!1 &6132682275427754538

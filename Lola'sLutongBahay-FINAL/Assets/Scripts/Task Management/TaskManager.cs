@@ -5,52 +5,85 @@ using UnityEngine.Events;
 public class TaskManager : MonoBehaviour
 {
     public static TaskManager instance;
-    public List<Task> tasks = new List<Task>();
-    [SerializeField] UnityEvent allTaskFinished;
-    private bool EndGame = true;
 
-    void Start()
+    [Header("Task Management")]
+    public List<Task> tasks = new List<Task>();
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent allTasksFinished;
+
+    private bool hasInvokedAllTasksFinished = false;
+
+    private void Awake()
     {
         if (instance != null && instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject); // Prevent duplicate TaskManagers
+            return;
         }
-        else
-        {
-            instance = this;
-        }
-        DontDestroyOnLoad(gameObject);
         
+        instance = this;
+        DontDestroyOnLoad(gameObject); // Persist TaskManager across scenes
     }
 
-    void Update()
+    private void Update()
     {
-        if(AreAllTasksComplete() && EndGame)
+        if (AreAllTasksComplete() && !hasInvokedAllTasksFinished)
         {
-            allTaskFinished.Invoke();
-            EndGame = false;
+            allTasksFinished?.Invoke();
+            hasInvokedAllTasksFinished = true;
+            Debug.Log("All tasks completed! Invoking final event.");
         }
     }
 
     public void AddTask(string title)
     {
+        if (string.IsNullOrEmpty(title))
+        {
+            Debug.LogWarning("Cannot add a task with an empty title.");
+            return;
+        }
+
+        if (GetTask(title) != null)
+        {
+            Debug.LogWarning($"Task '{title}' already exists!");
+            return;
+        }
+
         Task newTask = new Task(title);
         tasks.Add(newTask);
+        Debug.Log($"Task added: {title}");
     }
 
     public Task GetTask(string title)
     {
+        if (string.IsNullOrEmpty(title))
+        {
+            Debug.LogWarning("Task title is null or empty.");
+            return null;
+        }
+
         return tasks.Find(task => task.title == title);
     }
 
     public void MarkTaskAsComplete(string title)
     {
         Task task = GetTask(title);
-        if (task != null)
+        if (task != null && !task.taskComplete)
         {
             task.MarkAsComplete();
+            Debug.Log($"Task marked as complete: {title}");
+        }
+        else if (task == null)
+        {
+            Debug.LogWarning($"Task '{title}' not found!");
+        }
+        else
+        {
+            Debug.LogWarning($"Task '{title}' is already complete.");
         }
     }
+
     public bool IsTaskComplete(string title)
     {
         Task task = GetTask(title);
@@ -58,20 +91,21 @@ public class TaskManager : MonoBehaviour
     }
 
     public bool AreAllTasksComplete()
-{
-    if (tasks.Count == 0)
     {
-        return true;
-    }
-
-    foreach (Task task in tasks)
-    {
-        if (!task.taskComplete)
+        if (tasks.Count == 0)
         {
-            return false; // If any task is incomplete, return false
+            Debug.Log("No tasks available — treating as all tasks complete.");
+            return true; // No tasks means everything is technically "done"
         }
-    }
 
-    return true; // All tasks are complete
-}
+        foreach (Task task in tasks)
+        {
+            if (!task.taskComplete)
+            {
+                return false;
+            }
+        }
+
+        return true; // All tasks are complete
+    }
 }
