@@ -1096,13 +1096,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114094133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.38, y: 5.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 889542322}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &114094137
 CircleCollider2D:
@@ -1203,11 +1203,12 @@ MonoBehaviour:
     - character:
         name: Lola Felicia
         icon: {fileID: 21300000, guid: 5134916901b2e544daec4a18985dd5e3, type: 3}
-      line: 'I dunno the dialogue during quest so ikaw nalang maglagay vic
-
-        -C'
+      line: Are you Exicited to Cook apo?
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: I'm Excited to Cook lola!
   taskName: Talk to Lola
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls:
@@ -1235,6 +1236,7 @@ MonoBehaviour:
           m_StringArgument: Talk to Lola
           m_BoolArgument: 0
         m_CallState: 2
+  exclamationMark: {fileID: 1374646068}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls:
@@ -1606,14 +1608,24 @@ MonoBehaviour:
   DialoguePanel: {fileID: 1218446581}
   autoTriggerOnCollision: 1
   initialDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: I should probably greet Ming first, I think I heard her in the living
+        room...
   afterQuestDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: I should probably greet Ming first, I think I heard her in the living
+        room...
   taskName: 
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls: []
+  exclamationMark: {fileID: 0}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -8103,6 +8115,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877535755}
   m_CullTransparentMesh: 1
+--- !u!1 &889542321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889542322}
+  m_Layer: 0
+  m_Name: Lola
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &889542322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889542321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.38, y: 5.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1374646071}
+  - {fileID: 114094136}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &910165509
 GameObject:
   m_ObjectHideFlags: 0
@@ -9098,10 +9143,10 @@ MonoBehaviour:
   afterQuestDialogue:
     dialogueLines: []
   taskName: 
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls: []
+  exclamationMark: {fileID: 0}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -9227,14 +9272,22 @@ MonoBehaviour:
   DialoguePanel: {fileID: 1218446581}
   autoTriggerOnCollision: 1
   initialDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: There's much more to do here. We can go outside later...
   afterQuestDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: There's much more to do here. We can go outside later...
   taskName: 
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls: []
+  exclamationMark: {fileID: 0}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -9605,6 +9658,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060718579}
   m_CullTransparentMesh: 1
+--- !u!1 &1074366941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1074366942}
+  - component: {fileID: 1074366943}
+  - component: {fileID: 1074366944}
+  m_Layer: 0
+  m_Name: QuestIndicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1074366942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074366941}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.296, y: 0.349, z: 0}
+  m_LocalScale: {x: 0.119663455, y: 0.119663455, z: 0.119663455}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1094036794}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1074366943
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074366941}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: cb1d255eda92cce4ca757c42deef6e53, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.58, y: 4.58}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &1074366944
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074366941}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb12edd81aedd464cb450e0408d8106b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!224 &1076970742 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3794589606044644286, guid: d9f9028830692eb46b34e08e0cbe7c41, type: 3}
@@ -9743,6 +9901,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090630126}
   m_CullTransparentMesh: 1
+--- !u!1 &1094036793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1094036794}
+  m_Layer: 0
+  m_Name: Ming
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1094036794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094036793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.55, y: 4.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1074366942}
+  - {fileID: 2042593282}
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1096302802
 GameObject:
   m_ObjectHideFlags: 0
@@ -10510,14 +10701,22 @@ MonoBehaviour:
   DialoguePanel: {fileID: 1978689628}
   autoTriggerOnCollision: 0
   initialDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: Hello Lolo!
   afterQuestDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: Hello Lolo!
   taskName: 
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls: []
+  exclamationMark: {fileID: 0}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -13272,6 +13471,111 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3716326, y: 1.0134716}
   m_EdgeRadius: 0
+--- !u!1 &1374646068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1374646071}
+  - component: {fileID: 1374646070}
+  - component: {fileID: 1374646069}
+  m_Layer: 0
+  m_Name: QuestIndicator_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1374646069
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374646068}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb12edd81aedd464cb450e0408d8106b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!212 &1374646070
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374646068}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: cb1d255eda92cce4ca757c42deef6e53, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.58, y: 4.58}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1374646071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374646068}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.021, y: 1.25, z: 0}
+  m_LocalScale: {x: 0.11966, y: 0.11966, z: 0.11966}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 889542322}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1389287826
 GameObject:
   m_ObjectHideFlags: 0
@@ -14217,14 +14521,22 @@ MonoBehaviour:
   DialoguePanel: {fileID: 1218446581}
   autoTriggerOnCollision: 1
   initialDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: There's much more to do here. We can go outside later...
   afterQuestDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: There's much more to do here. We can go outside later...
   taskName: 
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls: []
+  exclamationMark: {fileID: 0}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -14398,10 +14710,10 @@ MonoBehaviour:
   afterQuestDialogue:
     dialogueLines: []
   taskName: 
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls: []
+  exclamationMark: {fileID: 0}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -16037,14 +16349,22 @@ MonoBehaviour:
   DialoguePanel: {fileID: 1218446581}
   autoTriggerOnCollision: 1
   initialDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: I think we should finish up here first...
   afterQuestDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: I think we should finish up here first...
   taskName: 
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls: []
+  exclamationMark: {fileID: 0}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -21177,7 +21497,6 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: 2abb1338522ecf643bb77f60f0a95238, type: 3}
       line: '*Yaawwnn* meeooow *purrrr*'
   taskName: Talk to Ming
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls:
@@ -21205,6 +21524,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  exclamationMark: {fileID: 1074366941}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -21320,13 +21640,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042593275}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.55, y: 4.61, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7567839, y: 0.7567839, z: 0.7567839}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 1094036794}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2042593283
 Animator:
@@ -58277,14 +58597,22 @@ MonoBehaviour:
   DialoguePanel: {fileID: 1978689628}
   autoTriggerOnCollision: 0
   initialDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: Fresh flowers... Tito must've got them from the garden.
   afterQuestDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: Fresh flowers... Tito must've got them from the garden.
   taskName: 
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls: []
+  exclamationMark: {fileID: 0}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -58375,14 +58703,22 @@ MonoBehaviour:
   DialoguePanel: {fileID: 1218446581}
   autoTriggerOnCollision: 1
   initialDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: There's much more to do here. We can go upstairs later...
   afterQuestDialogue:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Dalisay
+        icon: {fileID: 21300000, guid: a015e3d93dd60b047ada8971f28642c9, type: 3}
+      line: There's much more to do here. We can go upstairs later...
   taskName: 
-  targetNPCName: 
   onQuestComplete:
     m_PersistentCalls:
       m_Calls: []
+  exclamationMark: {fileID: 0}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []

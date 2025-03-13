@@ -45,15 +45,17 @@ public class DialogueHandler : MonoBehaviour
 
     [Header("Quest Integration")]
     [SerializeField] private string taskName;
-    [SerializeField] private string targetNPCName;
     [SerializeField] private UnityEvent onQuestComplete;
+
+    [Header("Quest Indicator")]
+    public GameObject exclamationMark; // Appears if quest hasn't been activated
 
     [Header("Events")]
     public UnityEvent onDialogueComplete;
 
     private TaskManager taskManager;
     private bool hasGivenQuest = false;
-    private bool hasPlayedInitialDialogue = false; // NEW: Tracks if initial dialogue was shown
+    private bool hasSeenInitialDialogue = false;
 
     void Start()
     {
@@ -62,6 +64,8 @@ public class DialogueHandler : MonoBehaviour
         {
             Debug.LogError("TaskManager instance not found! Ensure TaskManager is in the scene.");
         }
+
+        UpdateExclamationMark();
     }
 
     void Update()
@@ -69,7 +73,7 @@ public class DialogueHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && playerInRange)
         {
             TriggerDialogue();
-            DialoguePanel.SetActive(false); 
+            DialoguePanel.SetActive(false);
         }
     }
 
@@ -96,11 +100,17 @@ public class DialogueHandler : MonoBehaviour
 
         if (npcType == NPCType.QuestGiver && !hasGivenQuest)
         {
-            AssignTalkToNPCQuest();
+            AssignQuest();
         }
-        else if (npcType == NPCType.QuestTarget)
+
+        if (npcType == NPCType.QuestTarget)
         {
-            CompleteTalkToNPCQuest();
+            CompleteQuest();
+        }
+
+        if (!hasSeenInitialDialogue)
+        {
+            hasSeenInitialDialogue = true; // Mark initial dialogue as "seen"
         }
 
         Invoke(nameof(EndDialogue), 2f);
@@ -108,29 +118,34 @@ public class DialogueHandler : MonoBehaviour
 
     private Dialogue GetCurrentDialogue()
     {
-        if (!hasPlayedInitialDialogue)
+        bool isTaskComplete = taskManager != null && taskManager.IsTaskComplete(taskName);
+
+        if (!hasSeenInitialDialogue)
         {
-            hasPlayedInitialDialogue = true; // Ensure it only plays once
-            return initialDialogue;
+            return initialDialogue; // First time speaking
         }
-        else if (taskManager != null && taskManager.IsTaskComplete(taskName))
+        else if (isTaskComplete)
         {
-            return afterQuestDialogue;
+            return afterQuestDialogue; // After quest is completed
         }
-        return afterQuestDialogue; // Fallback if initial is done but quest isn't complete
+        else
+        {
+            return null; // No dialogue after the first talk until quest is done
+        }
     }
 
-    private void AssignTalkToNPCQuest()
+    private void AssignQuest()
     {
         if (taskManager == null || string.IsNullOrEmpty(taskName) || hasGivenQuest) return;
 
         taskManager.AddTask(taskName);
         QuestHUD.instance?.UpdateQuestHUD();
         hasGivenQuest = true;
-        Debug.Log($"Quest assigned: Talk to {targetNPCName}");
+        UpdateExclamationMark();
+        Debug.Log($"Quest assigned: {taskName}");
     }
 
-    private void CompleteTalkToNPCQuest()
+    private void CompleteQuest()
     {
         if (taskManager == null || string.IsNullOrEmpty(taskName)) return;
 
@@ -140,7 +155,29 @@ public class DialogueHandler : MonoBehaviour
             task.MarkAsComplete();
             QuestHUD.instance?.UpdateQuestHUD();
             onQuestComplete?.Invoke();
+            UpdateExclamationMark();
             Debug.Log($"Quest '{taskName}' completed.");
+        }
+    }
+
+    private void UpdateExclamationMark()
+    {
+        if (exclamationMark == null) return;
+
+        bool hasActiveTask = taskManager != null && taskManager.GetTask(taskName) != null;
+        bool isTaskComplete = taskManager != null && taskManager.IsTaskComplete(taskName);
+
+        if (npcType == NPCType.QuestGiver && !hasGivenQuest)
+        {
+            exclamationMark.SetActive(true); // Show until quest is accepted
+        }
+        else if (npcType == NPCType.QuestTarget && hasActiveTask && !isTaskComplete)
+        {
+            exclamationMark.SetActive(true); // Show until quest is complete
+        }
+        else
+        {
+            exclamationMark.SetActive(false); // Hide otherwise
         }
     }
 
