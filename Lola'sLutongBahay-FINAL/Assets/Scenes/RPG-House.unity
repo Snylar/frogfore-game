@@ -1206,7 +1206,7 @@ MonoBehaviour:
   onQuestComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 159754146}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TaskManager, Assembly-CSharp
         m_MethodName: AddTask
         m_Mode: 5
@@ -1542,7 +1542,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &137554224
 GameObject:
@@ -1949,57 +1949,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!1 &159754145
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 159754147}
-  - component: {fileID: 159754146}
-  m_Layer: 0
-  m_Name: TaskManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &159754146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159754145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146b93f91fc65674eb2a0c618c01c93d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tasks:
-  - title: Talk to Ming
-    subtitle: 
-    taskComplete: 0
-  allTasksFinished:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &159754147
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159754145}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.78, y: 2.98, z: 0.12007574}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 33
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164717509
 GameObject:
   m_ObjectHideFlags: 0
@@ -4037,7 +3986,7 @@ RectTransform:
   m_Children:
   - {fileID: 1970218934}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6297,7 +6246,7 @@ Transform:
   m_Children:
   - {fileID: 2010531748}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &703817292
 Animator:
@@ -8391,7 +8340,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &954163687
 MonoBehaviour:
@@ -10473,7 +10422,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1212911128
 PolygonCollider2D:
@@ -11576,7 +11525,7 @@ RectTransform:
   m_Children:
   - {fileID: 2021616646}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13315,15 +13264,27 @@ PrefabInstance:
       objectReference: {fileID: 401662455}
     - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0511267
+      value: -1.0511265
       objectReference: {fileID: 0}
     - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5781642
+      value: -1.5781641
       objectReference: {fileID: 0}
     - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13335,15 +13296,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13356,6 +13317,22 @@ PrefabInstance:
     - target: {fileID: 9012234488905838536, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: tasks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: tasks.Array.data[0].title
+      value: Talk to Ming
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: tasks.Array.data[0].subtitle
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9012234488905838542, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_Name
@@ -13584,6 +13561,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445471611}
   m_CullTransparentMesh: 1
+--- !u!114 &1475899891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+  m_PrefabInstance: {fileID: 1431203098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146b93f91fc65674eb2a0c618c01c93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1489578510
 GameObject:
   m_ObjectHideFlags: 0
@@ -15895,7 +15883,7 @@ Transform:
   - {fileID: 567858854}
   - {fileID: 2086357723}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1599265814
 GameObject:
@@ -20457,7 +20445,7 @@ MonoBehaviour:
   onQuestComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 159754146}
+      - m_Target: {fileID: 1475899891}
         m_TargetAssemblyTypeName: TaskManager, Assembly-CSharp
         m_MethodName: AddTask
         m_Mode: 5
