@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class knobtrigger : MonoBehaviour
+public class griposcript : MonoBehaviour
 {
     private Animator KnobTwistAnim;
-    public Animator FireTrigger;
+    //public Animator FireTrigger;
     private bool stoveTurnedOn = false;
 
     [Header("Managers")]
@@ -61,7 +61,7 @@ public class knobtrigger : MonoBehaviour
             {
                 // Play animations
                 //KnobTwistAnim.Play("knobOff");
-                FireTrigger.Play("FireOff");
+                //FireTrigger.Play("FireOff");
 
                 // Play sound
                 PlaySound(knobOffSound);
