@@ -399,7 +399,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68573132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -843,7 +843,7 @@ MonoBehaviour:
   servingManager: {fileID: 0}
   actionName: addrice
   AddingIngredients: {fileID: 1626753221}
-  AddIngredient: addrice
+  AddIngredient: enterpotsink
   actionEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2116,6 +2116,18 @@ MonoBehaviour:
           m_StringArgument: closelid
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 68573136}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &1002010104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2790,6 +2802,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: stageonefinish
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1868100554}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1174373581}
@@ -3704,6 +3728,18 @@ PrefabInstance:
       propertyPath: m_text
       value: Sinaing na Bigas
       objectReference: {fileID: 0}
+    - target: {fileID: 7216106032729714887, guid: 6206d31fb34717b4ca1301347da9a89c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 915638610}
+    - target: {fileID: 7216106032729714887, guid: 6206d31fb34717b4ca1301347da9a89c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7216106032729714887, guid: 6206d31fb34717b4ca1301347da9a89c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7216106033316244912, guid: 6206d31fb34717b4ca1301347da9a89c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3904,7 +3940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GripoOn: {fileID: 1626753221}
-  animationtag: washrice
+  animationtag: SinkWash
   recipeManager: {fileID: 1553896844}
   servingManager: {fileID: 0}
   actionName: washrice

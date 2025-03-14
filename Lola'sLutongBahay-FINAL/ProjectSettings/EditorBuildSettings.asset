@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/#Debug_Cooking Testing.unity
     guid: bc1fed558d1eb2246b76eac95ebbfd3b
+  - enabled: 1
+    path: Assets/Scenes/#Debug_Sinaing.unity
+    guid: 68338b94c8f33ec419a22ad2a86c693d
   m_configObjects: {}
