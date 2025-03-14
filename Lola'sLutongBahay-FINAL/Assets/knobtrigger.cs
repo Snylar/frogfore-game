@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 
 public class knobtrigger : MonoBehaviour
 {
     private Animator KnobTwistAnim;
     public Animator FireTrigger;
+    public VisualEffect vfxEffect; // Assign in the Inspector
     private bool stoveTurnedOn = false;
 
     [Header("Managers")]
@@ -15,6 +17,7 @@ public class knobtrigger : MonoBehaviour
     public string actionName;
 
     [SerializeField] UnityEvent actionEvent;
+    [SerializeField] UnityEvent TurnoffEvent;
     
 
     // Audio setup
@@ -25,6 +28,7 @@ public class knobtrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        vfxEffect.Stop();
         KnobTwistAnim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
@@ -42,11 +46,13 @@ public class knobtrigger : MonoBehaviour
             if (stoveTurnedOn == false)
             {
                 // Play animations
-                //KnobTwistAnim.Play("knobOn");
+                KnobTwistAnim.Play("knobOn");
                 //FireTrigger.Play("FireOn");
 
                 // Play sound
                 PlaySound(knobOnSound);
+
+                vfxEffect.Play();
                 
                 //Recipe Manager
                 recipeManager.playerActions.Add(actionName);
@@ -60,11 +66,19 @@ public class knobtrigger : MonoBehaviour
             else
             {
                 // Play animations
-                //KnobTwistAnim.Play("knobOff");
+                KnobTwistAnim.Play("knobOff");
                 FireTrigger.Play("FireOff");
+
+                vfxEffect.Stop();
+
+                //Recipe Manager
+                recipeManager.playerActions.Add("turnOff");
+                    string result = recipeManager.CheckSequence();
+                    Debug.Log(result);
 
                 // Play sound
                 PlaySound(knobOffSound);
+                TurnoffEvent.Invoke();
 
                 stoveTurnedOn = false;
             }

@@ -62,7 +62,7 @@ public class DragBowlIngredients : MonoBehaviour
             // Check if the dropped position is inside the collider
             if (targetCollider.bounds.Contains(transform.position))
             {
-                AddingIngredients.SetTrigger(AddIngredient);
+                AddingIngredients.Play(AddIngredient);
                 Debug.Log("Inside");
                 this.GetComponent<SpriteRenderer>().sprite = EmptyBowl;
                 StartCoroutine(PlayCookingStateAfterAnimation());

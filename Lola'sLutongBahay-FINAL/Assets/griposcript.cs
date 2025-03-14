@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class griposcript : MonoBehaviour
 {
-    private Animator KnobTwistAnim;
-    //public Animator FireTrigger;
+    public Animator GripoOn;
+    public string animationtag;
     private bool stoveTurnedOn = false;
 
     [Header("Managers")]
@@ -25,7 +25,6 @@ public class griposcript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        KnobTwistAnim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
         // Add AudioSource if missing
@@ -37,13 +36,13 @@ public class griposcript : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log("Gumagana!");
         if (Input.GetMouseButtonDown(0))
         {
             if (stoveTurnedOn == false)
             {
                 // Play animations
-                //KnobTwistAnim.Play("knobOn");
-                //FireTrigger.Play("FireOn");
+                GripoOn.Play(animationtag);
 
                 // Play sound
                 PlaySound(knobOnSound);
