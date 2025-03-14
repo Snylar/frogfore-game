@@ -13321,6 +13321,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: tasks.Array.data[0].title
+      value: Talk to Ming
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: tasks.Array.data[1].title
+      value: Go to Kitchen
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: tasks.Array.data[2].title
+      value: Talk to Lola
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: tasks.Array.data[3].title
+      value: Cook Itlog
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: tasks.Array.data[4].title
+      value: Talk to Lola
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012234488905838539, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
+      propertyPath: tasks.Array.data[5].title
+      value: Serve kay Lola
+      objectReference: {fileID: 0}
     - target: {fileID: 9012234488905838542, guid: 98a4b7e5f1bdd054db5a318fa14305f9, type: 3}
       propertyPath: m_Name
       value: GameManager
