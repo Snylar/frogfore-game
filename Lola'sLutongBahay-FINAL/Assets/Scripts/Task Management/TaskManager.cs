@@ -6,36 +6,33 @@ public class TaskManager : MonoBehaviour
 {
     public static TaskManager instance;
     public List<Task> tasks = new List<Task>();
-    [SerializeField] UnityEvent allTaskFinished;
-    private bool EndGame = true;
+    public UnityEvent onTaskUpdated;
 
-    void Start()
+    private void Awake()
     {
         if (instance != null && instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         else
         {
             instance = this;
         }
         DontDestroyOnLoad(gameObject);
-        
     }
 
-    void Update()
+    // Re-added AddTask to create new tasks and refresh the QuestHUD
+    public void AddTask(string title, string subtitle = "")
     {
-        if(AreAllTasksComplete() && EndGame)
-        {
-            allTaskFinished.Invoke();
-            EndGame = false;
-        }
-    }
-
-    public void AddTask(string title)
-    {
-        Task newTask = new Task(title);
+        Task newTask = new Task(title) { subtitle = subtitle };
         tasks.Add(newTask);
+        onTaskUpdated?.Invoke(); // Notify HUD or other systems
+        QuestHUD.instance?.UpdateQuestHUD();
+        Debug.Log($"Task added: {title} with subtitle: {subtitle}");
+    }
+    public void AddTaskFromEvent(string title)
+    {
+    AddTask(title);
     }
 
     public Task GetTask(string title)
@@ -46,32 +43,35 @@ public class TaskManager : MonoBehaviour
     public void MarkTaskAsComplete(string title)
     {
         Task task = GetTask(title);
-        if (task != null)
+        if (task != null && !task.taskComplete)
         {
             task.MarkAsComplete();
+            onTaskUpdated?.Invoke(); // Notify listeners that a task was completed
+            QuestHUD.instance?.UpdateQuestHUD();
+            Debug.Log($"Task marked as complete: {title}");
+        }
+        else
+        {
+            Debug.LogWarning($"Task '{title}' not found or already completed.");
         }
     }
+
     public bool IsTaskComplete(string title)
     {
         Task task = GetTask(title);
         return task != null && task.taskComplete;
     }
 
-    public bool AreAllTasksComplete()
-{
-    if (tasks.Count == 0)
+    public List<Task> GetActiveTasks()
     {
-        return true;
-    }
-
-    foreach (Task task in tasks)
-    {
-        if (!task.taskComplete)
+        List<Task> activeTasks = new List<Task>();
+        foreach (Task task in tasks)
         {
-            return false; // If any task is incomplete, return false
+            if (!task.taskComplete)
+            {
+                activeTasks.Add(task);
+            }
         }
+        return activeTasks;
     }
-
-    return true; // All tasks are complete
-}
 }

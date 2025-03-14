@@ -6,47 +6,64 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] PlayerStats[] playerStats;
+    [Header("Player Stats")]
+    [SerializeField] private PlayerStats[] playerStats;
 
-    public bool gameMenuOpened, dialogBoxOpened, shopPanelOpened;
+    [Header("Game State")]
+    public bool gameMenuOpened;
+    public bool dialogBoxOpened;
+    public bool shopPanelOpened;
 
+    [Header("Currency")]
     public int currentBitcoins;
 
-    void Start()
+    private void Awake()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
+        // Ensure only one instance exists
+        if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); // Persist across scenes
         }
-        DontDestroyOnLoad(gameObject);
-
-        //playerStats = FindObjectOfType<PlayerStats>();
+        else if (instance != this && gameObject != null)
+        {
+            Debug.LogWarning("Duplicate GameManager detected. Destroying the new one.");
+            DestroyImmediate(gameObject); // Immediate destruction prevents lingering issues
+        }
     }
 
-    void Update()
+    private void Update()
     {
-        if(gameMenuOpened || dialogBoxOpened || shopPanelOpened)
+        if (PlayerController.instance != null)
         {
-            PlayerController.instance.deactivateMovement = true;
-        }
-        else
-        {
-            PlayerController.instance.deactivateMovement = false;
+            PlayerController.instance.deactivateMovement = gameMenuOpened || dialogBoxOpened || shopPanelOpened;
         }
     }
 
     public PlayerStats[] GetPlayerStats()
     {
+        if (playerStats == null || playerStats.Length == 0)
+        {
+            Debug.LogWarning("PlayerStats array is empty or not assigned!");
+        }
         return playerStats;
+    }
+
+    public void AddBitcoins(int amount)
+    {
+        currentBitcoins += amount;
+        Debug.Log($"Added {amount} bitcoins. Current balance: {currentBitcoins}");
+    }
+
+    public void RemoveBitcoins(int amount)
+    {
+        currentBitcoins = Mathf.Max(currentBitcoins - amount, 0); 
+        Debug.Log($"Removed {amount} bitcoins. Current balance: {currentBitcoins}");
     }
 
     public void DestroyQuitGame()
     {
-        // Add any additional cleanup or effects before destroying the GameObject
+        Debug.Log("Quitting game and destroying GameManager...");
         Destroy(gameObject);
     }
 }
