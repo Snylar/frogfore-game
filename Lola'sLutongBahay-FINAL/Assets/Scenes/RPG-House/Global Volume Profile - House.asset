@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Value: -2
   saturation:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 24
 --- !u!114 &-3478592578036789502
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -46,7 +46,7 @@ MonoBehaviour:
     m_Value: 0.07
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.31
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.84184843, b: 0.514151, a: 1}
+    m_Value: {r: 0.9716981, g: 0.8528861, b: 0.5271004, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0.15

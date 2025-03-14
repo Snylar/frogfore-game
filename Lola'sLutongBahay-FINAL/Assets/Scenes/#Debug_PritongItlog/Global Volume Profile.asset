@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     m_OverrideState: 1
-    m_Value: -7
+    m_Value: 2
   saturation:
     m_OverrideState: 1
     m_Value: 33
@@ -84,7 +84,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
