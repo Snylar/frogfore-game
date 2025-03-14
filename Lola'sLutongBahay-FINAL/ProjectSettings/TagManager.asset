@@ -7,6 +7,7 @@ TagManager:
   - Player2
   - Plant
   - Harvest
+  - Menu
   layers:
   - Default
   - TransparentFX
