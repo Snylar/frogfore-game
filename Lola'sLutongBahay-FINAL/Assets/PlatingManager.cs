@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlatingManager : MonoBehaviour
 {
@@ -11,7 +12,14 @@ public class PlatingManager : MonoBehaviour
     public UnityEvent correctEvent;
     public UnityEvent failedEvent;
 
-    // Call this function when the player finishes performing actions
+    // Call this function when the Serve button is pressed
+    public void OnServeButtonPressed()
+    {
+        string result = CheckRecipe();
+        Debug.Log(result);
+    }
+
+    // Checks the player's actions against the recipe
     public string CheckRecipe()
     {
         if (ContainsAllRecipeActions())
@@ -35,20 +43,13 @@ public class PlatingManager : MonoBehaviour
         {
             if (PlayerActions.Contains(action))
             {
-                PlayerActions.Remove(action); // remove to handle duplicates correctly
+                PlayerActions.Remove(action); // Remove to handle duplicates correctly
             }
             else
             {
-                return false; // missing an action
+                return false; // Missing an action
             }
         }
         return true;
-    }
-
-    private void Update()
-    {
-        // Optionally call CheckRecipe() automatically here if you want auto-checking
-        // Example:
-        // if (Input.GetKeyDown(KeyCode.Space)) Debug.Log(CheckRecipe());
     }
 }

@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DragFood : MonoBehaviour
@@ -11,6 +9,7 @@ public class DragFood : MonoBehaviour
     private bool isReleased = false;
 
     public Collider2D targetCollider;
+    public Animator AddingAnimation;
     public PlatingManager platingManager;
     public string actionName;
     private float smoothTime = 11.22f;
@@ -57,6 +56,10 @@ public class DragFood : MonoBehaviour
                 {
                     platingManager.playerActions.Add(actionName);
                     string result = platingManager.CheckRecipe();
+                    if (AddingAnimation != null)
+                    {
+                        AddingAnimation.Play("AddIngredient");
+                    }
                     Debug.Log(result);
                 }
                 else
