@@ -55,12 +55,10 @@ public class DragFood : MonoBehaviour
                 if (platingManager != null)
                 {
                     platingManager.playerActions.Add(actionName);
-                    string result = platingManager.CheckRecipe();
                     if (AddingAnimation != null)
                     {
                         AddingAnimation.Play("AddIngredient");
                     }
-                    Debug.Log(result);
                 }
                 else
                 {
