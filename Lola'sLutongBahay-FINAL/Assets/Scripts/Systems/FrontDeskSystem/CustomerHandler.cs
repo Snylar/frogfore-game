@@ -1,0 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class CustomerHandler : MonoBehaviour
+{
+
+    public CustomerSO[] customers;
+    public CustomerSO currentCustomer = null;
+    void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
+
+    public void GetCustomer()
+    {
+        // Randomly pick customer from customer list, the sprite doesnt matter anyways
+        if (currentCustomer != null)
+        {
+            Debug.LogWarning("Customer should be null here");
+            return;
+        }
+
+        var random = Random.Range(0, customers.Count());
+        currentCustomer = customers[random];
+    }
+
+    public void RemoveCustomer()
+    {
+        // Should blow a notif here for those concerned
+        currentCustomer = null;
+    }
+}
