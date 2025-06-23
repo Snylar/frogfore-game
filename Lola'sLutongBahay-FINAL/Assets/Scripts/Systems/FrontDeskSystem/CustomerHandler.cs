@@ -6,8 +6,8 @@ using UnityEngine;
 public class CustomerHandler : MonoBehaviour
 {
 
-    public CustomerSO[] customers;
-    public CustomerSO currentCustomer = null;
+    public Customer[] customers;
+    public Customer currentCustomer = null;
     void Start()
     {
         DontDestroyOnLoad(this);

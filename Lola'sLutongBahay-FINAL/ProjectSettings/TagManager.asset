@@ -7,6 +7,7 @@ TagManager:
   - Player2
   - Plant
   - Harvest
+  - CustomerManager
   layers:
   - Default
   - TransparentFX

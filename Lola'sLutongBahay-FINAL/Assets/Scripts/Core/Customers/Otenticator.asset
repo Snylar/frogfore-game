@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39dc981358c2b2842bfc0c863ff866cb, type: 3}
-  m_Name: Albertus
+  m_Name: Otenticator
   m_EditorClassIdentifier: 
-  customerName: Albertus
-  sprite: {fileID: 21300000, guid: 5118adde627808d4cbe4af8493681b13, type: 3}
+  customerName: Bertus
+  sprite: {fileID: 21300000, guid: 3e503915cd042264492598bd188a5865, type: 3}
