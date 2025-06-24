@@ -5,13 +5,13 @@ using UnityEngine;
 public class FrontDeskHandler : MonoBehaviour
 {
 
-    CustomerHandler customerHandler;
-    GameObject customerHolder;
+    public CustomerHandler customerHandler;
+    public GameObject customerHolder;
     void Start()
     {
-        GameObject manager = GameObject.FindWithTag("CustomerManager");
-        customerHandler = manager.GetComponent<CustomerHandler>();
-        customerHolder = transform.Find("CustomerHolder")?.gameObject;
+        // GameObject manager = GameObject.FindWithTag("CustomerManager");
+        // customerHandler = manager.GetComponent<CustomerHandler>();
+        // customerHolder = transform.Find("CustomerHolder")?.gameObject;
 
 
         // reset stae of customerHolder
@@ -54,5 +54,10 @@ public class FrontDeskHandler : MonoBehaviour
 
         //For debug only
         customerHandler.RemoveCustomer();
+    }
+
+    public void ConfirmCustomerRequest()
+    {
+        Debug.Log("Processing Request");
     }
 }
