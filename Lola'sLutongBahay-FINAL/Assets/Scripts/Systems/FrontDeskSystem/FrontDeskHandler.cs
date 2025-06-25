@@ -1,63 +1,94 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class FrontDeskHandler : MonoBehaviour
+namespace LLB
 {
-
-    public CustomerHandler customerHandler;
-    public GameObject customerHolder;
-    void Start()
+    public class FrontDeskHandler : MonoBehaviour
     {
-        // GameObject manager = GameObject.FindWithTag("CustomerManager");
-        // customerHandler = manager.GetComponent<CustomerHandler>();
-        // customerHolder = transform.Find("CustomerHolder")?.gameObject;
+
+        [SerializeField]
+        private CustomerHandler customerHandler;
+
+        [SerializeField]
+        private GameObject customerHolder;
 
 
-        // reset stae of customerHolder
-        customerHolder.GetComponent<SpriteRenderer>().sprite = null;
-    }
+        [SerializeField]
+        private FoodLibraryHandler foodLibraryHandler;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+        [SerializeField]
+        private DialougeHandler dialougeHandler;
+
+
+        [SerializeField]
+        private Canvas dialogueCanvas;
+
+        [SerializeField]
+        private TMP_Text dialougeText;
+
+
+        void Start()
         {
-            EnterCustomer();
-            Debug.Log("Space key was pressed!");
+            customerHolder.GetComponent<SpriteRenderer>().sprite = null;
+            dialogueCanvas.gameObject.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        void Update()
         {
-            RemoveCustomerToDesk();
-            Debug.Log("Space A was pressed!");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                EnterCustomer();
+                Debug.Log("Space key was pressed!");
+            }
+
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                RemoveCustomerToDesk();
+                Debug.Log("Space A was pressed!");
+            }
         }
-    }
 
-    void EnterCustomer()
-    {
-        customerHandler.GetCustomer();
-
-        if (customerHandler.currentCustomer)
+        void EnterCustomer()
         {
-            LoadCustomerToDesk();
+            customerHandler.GetCustomer();
+
+            if (customerHandler.currentCustomer)
+            {
+                LoadCustomerToDesk();
+                foodLibraryHandler.GenerateRandomOrder();
+                dialogueCanvas.gameObject.SetActive(true);
+
+                if (foodLibraryHandler.currentOrder != null)
+                { 
+                    dialougeText.SetText(dialougeHandler.GenerateOrderDialouge(foodLibraryHandler.currentOrder));
+                }
+                
+            }
+            else
+            {
+                Debug.LogWarning("There is bug: Should not have currentCustomer");
+            }
         }
-    }
 
-    void LoadCustomerToDesk()
-    {
-        customerHolder.GetComponent<SpriteRenderer>().sprite = customerHandler.currentCustomer.sprite;
-    }
+        void LoadCustomerToDesk()
+        {
+            customerHolder.GetComponent<SpriteRenderer>().sprite = customerHandler.currentCustomer.sprite;
+        }
 
-    void RemoveCustomerToDesk()
-    {
-        customerHolder.GetComponent<SpriteRenderer>().sprite = null;
+        void RemoveCustomerToDesk()
+        {
+            customerHolder.GetComponent<SpriteRenderer>().sprite = null;
+            foodLibraryHandler.currentOrder = null;
+            dialogueCanvas.gameObject.SetActive(false);
+            customerHandler.RemoveCustomer();
+            dialougeText.SetText("");
+        }
 
-        //For debug only
-        customerHandler.RemoveCustomer();
-    }
-
-    public void ConfirmCustomerRequest()
-    {
-        Debug.Log("Processing Request");
+        public void ConfirmCustomerRequest()
+        {
+            Debug.Log("Processing Request");
+        }
     }
 }
+
+

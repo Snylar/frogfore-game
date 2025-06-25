@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CustomerHandler : MonoBehaviour
+namespace LLB
+{ 
+    public class CustomerHandler : MonoBehaviour
 {
 
     public Customer[] customers;
@@ -32,3 +34,6 @@ public class CustomerHandler : MonoBehaviour
         currentCustomer = null;
     }
 }
+}
+
+
